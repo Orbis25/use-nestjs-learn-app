@@ -11,6 +11,7 @@ export class TaskRepository extends Repository<Task> {
     task.title = title;
     task.description = description;
     task.status = TaskStatus.OPEN;
+    task.userId = createTaskDto.userId;
     await task.save();
     return task;
   }
